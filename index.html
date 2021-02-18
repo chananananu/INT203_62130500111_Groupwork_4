@@ -18,8 +18,8 @@
 </head>
 <body>
 <div id="app">
-<nav class="navbar-light bg-white pt-0 pb-0 shadow-sm ">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white ">
+<nav class="navbar-light bg-white shadow-sm" style="font-family: 'Kanit', sans-serif">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarNav">
             <div class="text-2xl font-bold ">Photo Gallery ({{countPhoto}}) | Like : {{likeAmount}}</p></div>
@@ -34,15 +34,17 @@
     </nav> 
 </nav>
 <!-- Content -->
-    <div class="flex justify-center gap-12 pt-7">
+    <div class="flex justify-center gap-12 py-7 flex-wrap">
         <div v-for="(cat,index) in inputSearch">
             <div class="card w-72 py-2 shadow-md ">
-                <div class="pl-3">
-                    <img :src="cat.profile" class="rounded-circle inline-block mr-2" width="35">{{cat.ig}}
+                <div class="pl-3" style="font-family: 'K2D', sans-serif; font-size: 18px;">
+                    <img :src="cat.profile" class="rounded-circle inline-block mr-2" width="35">{{cat.name}}
                 </div>
-                <img :src="cat.image" class="relative flex py-2 z-0"/>
-                <div @click="clickLike(index)" :class="{like: cat.like}">
-                    
+                <div >
+                    <img :src="cat.image" class="relative flex py-2 z-0"/>
+                </div>
+                
+                <div @click="clickLike(index)" :class="{like: cat.like}"> 
                     <div class="pl-3">
                         <button class="material-icons">favorite</button>
                     </div>
