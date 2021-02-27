@@ -48,10 +48,9 @@ const app = {
             searchCat: '',
             notFound: false,
             showImg: false,
-            currentIndex: 0
-
-
+            currentIndex: 0,
         }
+        
     },
     methods: {
         clickLike(index) {
@@ -60,14 +59,17 @@ const app = {
         toggleSearch() {
             this.search = !this.search;
         },
-        close() {
-            this.showImg = false;
-        },
-        imgClicked(index) {
-            this.showImg = true;
-            this.currentIndex = index;
+        // close() {
+        //     this.showImg = false;
+        // },
+        // imgClicked(index) {
+        //     this.showImg = true;
+        //     this.currentIndex = index;
+        // },
+        toggleModal(index){
+              this.showImg = !this.showImg;
+              this.currentIndex = index;
         }
-
 
     },
 
